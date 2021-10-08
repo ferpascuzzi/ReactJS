@@ -1,6 +1,5 @@
 import React from 'react'
-import {ItemListContainer} from '../HomeView/ItemListContainer'
-import  {CartWidget} from './CartWidget'
+import {CartWidget} from './CartWidget'
 import './navBar.css'
 
 export const NavBar = ({logo}) =>{
@@ -18,7 +17,7 @@ return (
     <p><CartWidget/></p>
 </nav>
 
-<ItemListContainer/>
+
 </header>
 )
 }
