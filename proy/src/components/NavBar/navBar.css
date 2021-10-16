@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+/*import 'bootstrap/dist/css/bootstrap.min.css'*/
 
 .logo{
     display: flex;
@@ -11,8 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
 }
 
 .navBarTest p{
-    margin: 0 30px;
+    margin: 0 30px
 }

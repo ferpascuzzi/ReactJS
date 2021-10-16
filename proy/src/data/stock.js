@@ -4,6 +4,7 @@ export const stock = [
         name: "Royal Canin Perros",
         price: 2500,
         img:"",
+        category: 'perro'
     },
 
     {
@@ -11,6 +12,7 @@ export const stock = [
         name: "Royal Canin Gatos",
         price: 1900,
         img:"",
+        category: 'gato'
     },
 
     {
@@ -18,6 +20,7 @@ export const stock = [
         name: "Eukanuba Perros",
         price: 2200,
         img:"",
+        category: 'perro'
     },
 
     {
@@ -25,12 +28,14 @@ export const stock = [
         name: "Old Prince Perros",
         price: 2100,
         img:"",
+        category: 'perro'
     },
     {
         id: 5,
         name: "Old Prince Gatos",
         price: 1550,
         img:"",
+        category: 'gato'
     },
 
     {
@@ -38,6 +43,7 @@ export const stock = [
         name: "Nutrique Perros",
         price: 2400,
         img:"",
+        category: 'perro'
     },
 
     {
@@ -45,5 +51,6 @@ export const stock = [
         name: "Nutrique Gatos",
         price: 1700,
         img: "",
+        category: 'gato'
     },
 ]
