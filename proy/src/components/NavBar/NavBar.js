@@ -2,24 +2,33 @@ import React from 'react'
 import {NavLink } from 'react-router-dom'
 import {CartWidget} from './CartWidget'
 import './navBar.css'
+import { Navbar, Container, NavbarBrand, NavDropdown} from 'react-bootstrap'
 
 export const NavBar = ({logo}) =>{
 
 return (
 <header>
 
-<h1 class="logo">{logo}</h1>
+<Navbar className="bg-dark expand-lg me-auto">
+    <Container>
 
-<nav class = "navBarTest">
-    <NavLink exact to="/">Inicio</NavLink>
-    <NavLink exact to="/productos/perro">Perros</NavLink>
-    <NavLink exact to="/productos/gato">Gatos</NavLink>
+        <NavLink exact to="/"><img src="logoblack.png" alt="logo" className="mx-3"/>{logo}</NavLink>
+        <NavbarBrand className="disabled text-light">MascoLand Store</NavbarBrand>
 
-    <NavLink exact to="/contacto">Contacto</NavLink>
-    <NavLink exact to="/cart"><CartWidget/></NavLink>
-    
-</nav>
+        <NavLink exact to="/" className="text-light">Inicio</NavLink>
 
+        <NavDropdown id="nav-dropdown-dark-example" title="Productos" menuVariant="dark">
+            <NavLink exact to="/productos/perro" className="text-light">Perros</NavLink><br/>
+            <NavLink exact to="/productos/gato" className="text-light">Gatos</NavLink>
+        </NavDropdown>
+        
+        <NavLink exact to="/contacto" className="text-light">Contacto</NavLink>
+        
+        <NavLink exact to="/cart" className="text-light"><CartWidget/></NavLink>
+
+
+    </Container>
+</Navbar>
 
 </header>
 )

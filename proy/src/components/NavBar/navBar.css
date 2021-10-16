@@ -1,9 +1,9 @@
 /*import 'bootstrap/dist/css/bootstrap.min.css'*/
 
-.logo{
+/*.logo{
     display: flex;
     justify-content: center;
-}
+}*/
 
 .navBarTest{
     
@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     
 }
 

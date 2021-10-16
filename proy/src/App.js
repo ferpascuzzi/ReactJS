@@ -15,7 +15,7 @@ function App() {
   return (
       <>
       <BrowserRouter>
-        <NavBar logo="MascoLand"/>     
+        <NavBar logo=""/> 
         
       <Switch>  
 
