@@ -5,16 +5,13 @@
     justify-content: center;
 }*/
 
-.navBarTest{
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+a:link {
     text-decoration: none;
-    
 }
 
-.navBarTest p{
-    margin: 0 30px
+#dropNav {
+    color: white;
 }
+
+
+

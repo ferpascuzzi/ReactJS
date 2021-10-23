@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
+import { CartContext } from '../../context/CartContext'
 
 export const CartWidget =  () => {
     
-    
+    const {calcQty} = useContext(CartContext)
+
     return (
         <div><FaShoppingCart/>
-            {/*<img src="carrito.png" alt="FotoCarrito"/>*/}
+        <span>{calcQty()}</span>
         </div>
 
 

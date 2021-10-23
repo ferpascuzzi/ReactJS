@@ -1,20 +1,54 @@
-import React from 'react'
-import {  useHistory } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import {  Link, useHistory } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
+import { ItemCount } from '../ItemCount/ItemCount'
 
-export const ItemDetail = ({id, name, price, img, category}) => {
+export const ItemDetail = ({id, name, price, img, category, stock}) => {
     
     const {goBack, push} = useHistory ()
     
+    const {addToCart, isInCart} = useContext (CartContext)
+
+    const [quantity, setQuantity] = useState (0)
+
+    const handleAdd = () => {
+        const newItem = { 
+        id,
+        name,
+        price,
+        category,
+        quantity,
+    }
+
+    if (quantity > 0) {
+    addToCart(newItem)
+    }
+}
+
     return (
-        <div>
+    <div className="container">
             <h2>{name}</h2>
             <p>{category}</p>
-            <h4>Precio: ${price}</h4>
+            <h4>${price}</h4>
+        
+        { isInCart (id) 
+        ? <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+        : 
+        <>
 
+        <ItemCount quantity={quantity} modifyQuantity={setQuantity} max={stock}/>
+
+        <br/>
+        <button className="btn btn-secondary"onClick={handleAdd}>Agregar a carrito</button>
+
+        </>
+        }
+
+        <hr/>
         <button className="btn btn-secondary" onClick={() => goBack()}>Volver</button>
+        <button className="btn btn-secondary mx-3" onClick={() => push("/")}>Volver al Inicio</button>
 
-        <button className="btn btn-primary" onClick={() => push("/")}>Volver al Inicio</button>
+    </div>
 
-        </div>
     )
 }

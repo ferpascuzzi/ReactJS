@@ -9,13 +9,23 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import { CartScreen } from './components/CartScreen/CartScreen';
+import { UIProvider } from './context/UIContext';
 
 function App() {
 
   return (
       <>
+
+      <UIProvider>
+
+      
+      <CartProvider>
+
       <BrowserRouter>
-        <NavBar logo=""/> 
+      
+      <NavBar/> 
         
       <Switch>  
 
@@ -37,7 +47,7 @@ function App() {
         </Route>
 
         <Route exact path="/cart">
-          <h1>Carrito</h1>
+          <CartScreen/>
         </Route>
 
         <Route path="*">
@@ -47,6 +57,11 @@ function App() {
       </Switch>
 
       </BrowserRouter>
+
+      </CartProvider>
+
+      </UIProvider>
+      
       </>
   );
 }
