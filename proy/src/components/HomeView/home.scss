@@ -1,0 +1,39 @@
+$colorMenu: grey;
+$colorMenuHover: rgb(160, 159, 159);
+
+.mainHomeTitulo{
+    text-align: center;
+ 
+    h1{
+        color: $colorMenu;
+        font-size: 40px;       
+    }
+    p{
+        color: black;
+        font-size: 20px; 
+        padding-top: 15px;  
+    }
+} 
+
+.mainHomeParrafo{
+    @extend .mainHomeTitulo;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+    @media only screen and (max-width:600px){
+        padding-top:20px;
+    }
+    @media only screen and (min-width:600px){
+        padding-top:50px;
+    }
+    @media only screen and (min-width:992px){
+        padding-top:150px;
+    }
+    
+    h1{
+        font-size: 30px;
+    }
+    p{
+        font-size: 18px;
+    }
+} 

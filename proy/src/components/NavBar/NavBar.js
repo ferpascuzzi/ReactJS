@@ -15,9 +15,10 @@ return (
         <NavLink exact to="/"><img src="/logoblack.png" alt="logo" className="mx-3"/>{logo}</NavLink>
         <NavbarBrand className="disabled text-light">MascoLand Store</NavbarBrand>
 
-        <NavLink exact to="/" className="text-light">Inicio</NavLink>
+        <NavLink exact to="/" className="text-light">INICIO</NavLink>
 
         <NavDropdown id="dropNav" title="Productos" menuVariant="dark">
+            <NavLink exact to="/productos" className="text-light">Ver todos</NavLink><br/>
             <NavLink exact to="/productos/Perro" className="text-light">Perros</NavLink><br/>
             <NavLink exact to="/productos/Gato" className="text-light">Gatos</NavLink>
         </NavDropdown>

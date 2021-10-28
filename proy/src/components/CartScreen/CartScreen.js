@@ -30,8 +30,10 @@ const {carrito, emptyCart, removeItem, calcTotal} = useContext(CartContext)
                         
                         <button className="btn btn-danger" onClick={()=> removeItem (prod.id)}>
                             <FaTrashAlt/></button>
-
+                            <hr/>
                     </div>
+                    
+                    
                 ))}
                 
                 <h3 className="my-3">Precio Total: ${calcTotal()}</h3>

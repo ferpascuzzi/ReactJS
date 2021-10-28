@@ -7,8 +7,8 @@ export const CartWidget =  () => {
     const {calcQty} = useContext(CartContext)
 
     return (
-        <div><FaShoppingCart/>
-        <span>{calcQty()}</span>
+        <div style={{visibility: calcQty()===0 ? "hidden" : "visible"}}><FaShoppingCart/>
+        <small>{calcQty()}</small>
         </div>
 
 

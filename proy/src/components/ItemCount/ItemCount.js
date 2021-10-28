@@ -14,12 +14,22 @@ export const ItemCount = ({quantity, modifyQuantity, max}) => {
         }
     }
 
+//"btn btn-outline-secondary me-2"
+//"btn btn-outline-secondary mx-2"
 
     return (
         <div>
-            <button onClick={handleRest} className="btn btn-secondary me-2"> - </button>
+            <button 
+                onClick={handleRest} 
+                className={`btn ${quantity === 0 ? "btn-outline-secondary disabled me-2" : "btn-outline-secondary me-2"}`}> - 
+            </button>
+
             <span>{quantity}</span>
-            <button onClick={handleSum} className="btn btn-secondary mx-2"> + </button>
+
+            <button 
+                onClick={handleSum} 
+                className={`btn ${quantity === max ? "btn-outline-secondary disabled mx-2" : "btn-outline-secondary mx-2"}`}> + 
+            </button>
         </div>
     )
 }

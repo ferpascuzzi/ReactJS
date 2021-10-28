@@ -12,6 +12,8 @@ import {
 import { CartProvider } from './context/CartContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { UIProvider } from './context/UIContext';
+import { Home } from './components/HomeView/Home';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
 
@@ -19,19 +21,17 @@ function App() {
       <>
 
       <UIProvider>
-
-      
       <CartProvider>
-
       <BrowserRouter>
-      
       <NavBar/> 
-        
       <Switch>  
 
         <Route exact path="/">
-          <ItemListContainer/>
+          <Home/>
+        </Route>
 
+        <Route exact path="/productos">
+          <ItemListContainer/>
         </Route>
 
         <Route exact path="/productos/:categoryId">
@@ -55,11 +55,9 @@ function App() {
         </Route>
 
       </Switch>
-
+      <Footer/><h1>footer</h1>
       </BrowserRouter>
-
       </CartProvider>
-
       </UIProvider>
       
       </>

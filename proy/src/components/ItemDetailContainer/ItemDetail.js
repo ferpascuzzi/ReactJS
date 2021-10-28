@@ -32,21 +32,21 @@ export const ItemDetail = ({id, name, price, img, category, stock}) => {
             <h4>${price}</h4>
         
         { isInCart (id) 
-        ? <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+        ? <Link to="/cart" className="btn btn-secondary">Terminar mi compra</Link>
         : 
         <>
 
         <ItemCount quantity={quantity} modifyQuantity={setQuantity} max={stock}/>
 
         <br/>
-        <button className="btn btn-secondary"onClick={handleAdd}>Agregar a carrito</button>
+        <button disabled={quantity === 0} className="btn btn-secondary"onClick={handleAdd}>Agregar a carrito</button>
 
         </>
         }
 
         <hr/>
         <button className="btn btn-secondary" onClick={() => goBack()}>Volver</button>
-        <button className="btn btn-secondary mx-3" onClick={() => push("/")}>Volver al Inicio</button>
+        <button className="btn btn-outline-secondary mx-3" onClick={() => push("/")}>Volver al Inicio</button>
 
     </div>
 

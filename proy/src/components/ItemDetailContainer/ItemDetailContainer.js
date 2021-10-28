@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { UIContext } from '../../context/UIContext'
-import { pedirProductos } from '../../helper/pedirProductos'
+import { getFirestore } from '../../firebase/config'
+//import { pedirProductos } from '../../helper/pedirProductos'
 import {ItemDetail} from './ItemDetail'
 
 export const ItemDetailContainer = () => {
@@ -13,16 +14,26 @@ const {loading, setLoading} = useContext(UIContext)
 const {itemId} = useParams ()
 
 useEffect(() => {
+
     setLoading(true)
 
-    pedirProductos()
-    .then(res=> {
-        setItem (res.find(prod => prod.id ===  Number(itemId)))
-    })
-    .finally(() =>{
-        setLoading(false)
-    })
-}, [itemId])
+    const db = getFirestore('productos')
+    const productos = db.collection('productos')
+    const item = productos.doc(itemId)
+
+    item.get()
+        .then((doc) => {
+            setItem({
+                id: doc.id,
+                ...doc.data()
+            })
+        })
+        .catch((err) => console.log(err))
+        .finally(() => {
+            setLoading(false)
+        })
+
+}, [itemId, setLoading])
 
     return (
         <div>
