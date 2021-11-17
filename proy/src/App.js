@@ -13,7 +13,8 @@ import { CartProvider } from './context/CartContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
 import { UIProvider } from './context/UIContext';
 import { Home } from './components/HomeView/Home';
-import { Footer } from './components/Footer/Footer';
+import {Nosotros} from './components/Nosotros/Nosotros';
+import { Checkout } from './components/Checkout/Checkout';
 
 function App() {
 
@@ -42,12 +43,16 @@ function App() {
           <ItemDetailContainer/>
         </Route>
 
-        <Route exact path="/contacto">
-          <h1>Contacto</h1>
+        <Route exact path="/nosotros">
+          <Nosotros/>
         </Route>
 
         <Route exact path="/cart">
           <CartScreen/>
+        </Route>
+
+        <Route exact path="/checkout">
+          <Checkout/>
         </Route>
 
         <Route path="*">
@@ -55,7 +60,6 @@ function App() {
         </Route>
 
       </Switch>
-      <Footer/><h1>footer</h1>
       </BrowserRouter>
       </CartProvider>
       </UIProvider>

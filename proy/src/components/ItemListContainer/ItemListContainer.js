@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
+import { Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router'
 import { UIContext } from '../../context/UIContext'
 import { getFirestore } from '../../firebase/config'
@@ -39,7 +40,9 @@ export const ItemListContainer = () => {
     return (
         <section className="container my-5">
             {loading
-            ? <p> Cargando... </p>
+            ? <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
             : <ItemList productos={items}/>
             }
             </section>

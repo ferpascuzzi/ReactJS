@@ -17,4 +17,3 @@ export const getFirestore = () => {
     return firebase.firestore(app)
 }
 
-export const db = getFirestore()

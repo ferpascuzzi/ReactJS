@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router'
 import { UIContext } from '../../context/UIContext'
 import { getFirestore } from '../../firebase/config'
@@ -38,8 +39,10 @@ useEffect(() => {
     return (
         <div>
       {
-          loading ? <h2>Cargando...</h2>
-          : <ItemDetail {...item}/>
+          loading ? <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                  : <ItemDetail {...item}/>
       }      
         </div>
     )

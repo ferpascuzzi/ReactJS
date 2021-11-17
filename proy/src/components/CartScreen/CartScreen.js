@@ -14,7 +14,7 @@ const {carrito, emptyCart, removeItem, calcTotal} = useContext(CartContext)
             {carrito.length ===0
             ?<>
             <h2>Tu carrito de compras se encuentra vacío</h2>
-            <Link to ="/" className="btn btn-secondary">Ir a comprar</Link>
+            <Link to ="/productos" className="btn btn-secondary">Ir a comprar</Link>
             </>
             :
                 <>
@@ -39,6 +39,11 @@ const {carrito, emptyCart, removeItem, calcTotal} = useContext(CartContext)
                 <h3 className="my-3">Precio Total: ${calcTotal()}</h3>
 
                 <button className="btn btn-danger" onClick={emptyCart}>Vaciar carrito</button>
+                <br/>
+                <br/>
+                <Link to="/checkout" className="btn btn-success">
+                    Terminar compra
+                </Link>
 
                 </>
             }

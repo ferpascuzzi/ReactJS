@@ -32,7 +32,7 @@ export const ItemDetail = ({id, name, price, img, category, stock}) => {
             <h4>${price}</h4>
         
         { isInCart (id) 
-        ? <Link to="/cart" className="btn btn-secondary">Terminar mi compra</Link>
+        ? <Link to="/cart" className="btn btn-secondary">Ver carrito</Link>
         : 
         <>
 
